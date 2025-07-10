@@ -4,7 +4,7 @@
 <head>
         <meta http-equiv="Content-Language" content="pt-br">
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>Habblive</title>
+        <title>Editor - Vampire</title>
         <script type="text/javascript">var andSoItBegins = (new Date()).getTime();</script>
         <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=+Uq+o1IWx810L7" style="display:none"
                         height="1" width="1" alt="" /></noscript>
@@ -481,72 +481,37 @@
                                         var clip = new Clipboard('.copy-btn', { text: function (trigger) { return editor.getData(); } });
 
                                         // Função para upload no Pastebin
-                                        // Substitua a função uploadToPastebin() por esta versão:
-                                        async function uploadToPastebin() {
+                                        function uploadToPastebin() {
                                                 const content = editor.getData();
                                                 const title = prompt("Digite um título para o Pastebin:", "Um Nome Qualquer");
 
                                                 if (title === null) return;
 
-                                                const params = new URLSearchParams();
-                                                params.append('api_dev_key', 'vDAHDLIG7TUshfw4S_vTly2kJYxzzo-f');
-                                                params.append('api_option', 'paste');
-                                                params.append('api_paste_code', content);
-                                                params.append('api_paste_name', title);
-                                                params.append('api_paste_format', 'html5');
-                                                params.append('api_paste_expire_date', 'N');
+                                                const form = document.createElement('form');
+                                                form.method = 'POST';
+                                                form.action = 'https://pastebin.com/api/api_post.php';
+                                                form.target = '_blank';
 
-                                                try {
-                                                        const response = await fetch('https://pastebin.com/api/api_post.php', {
-                                                                method: 'POST',
-                                                                body: params,
-                                                                headers: {
-                                                                        'Content-Type': 'application/x-www-form-urlencoded',
-                                                                },
-                                                        });
+                                                const params = {
+                                                        api_dev_key: 'vDAHDLIG7TUshfw4S_vTly2kJYxzzo-f',
+                                                        api_option: 'paste',
+                                                        api_paste_code: content,
+                                                        api_paste_name: title,
+                                                        api_paste_format: 'html5',
+                                                        api_paste_expire_date: 'N'
+                                                };
 
-                                                        if (!response.ok) throw new Error("Falha na requisição");
-
-                                                        const pastebinUrl = await response.text();
-
-                                                        // Verifica se a resposta é um link válido
-                                                        if (pastebinUrl.includes('https://pastebin.com/')) {
-                                                                // Cria um modal personalizado com o link copiável
-                                                                const modalHtml = `
-                <div id="pastebin-modal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:9999;">
-                    <div style="background:white;padding:20px;border-radius:5px;max-width:500px;width:100%;">
-                        <h3>Upload concluído!</h3>
-                        <p>Link gerado:</p>
-                        <input type="text" id="pastebin-link" value="${pastebinUrl}" style="width:100%;padding:8px;margin:10px 0;" readonly>
-                        <button onclick="copyPastebinLink()" style="padding:8px 15px;background:#4CAF50;color:white;border:none;border-radius:4px;cursor:pointer;">Copiar Link</button>
-                        <button onclick="closePastebinModal()" style="padding:8px 15px;background:#f44336;color:white;border:none;border-radius:4px;cursor:pointer;margin-left:10px;">Fechar</button>
-                    </div>
-                </div>
-            `;
-
-                                                                // Adiciona o modal ao corpo do documento
-                                                                const modalDiv = document.createElement('div');
-                                                                modalDiv.innerHTML = modalHtml;
-                                                                document.body.appendChild(modalDiv);
-                                                        } else {
-                                                                alert("Erro ao gerar o link: " + pastebinUrl);
-                                                        }
-                                                } catch (error) {
-                                                        alert("Erro ao enviar para o Pastebin: " + error.message);
+                                                for (const key in params) {
+                                                        const input = document.createElement('input');
+                                                        input.type = 'hidden';
+                                                        input.name = key;
+                                                        input.value = params[key];
+                                                        form.appendChild(input);
                                                 }
-                                        }
 
-                                        // Funções auxiliares para o modal
-                                        function copyPastebinLink() {
-                                                const linkInput = document.getElementById('pastebin-link');
-                                                linkInput.select();
-                                                document.execCommand('copy');
-                                                alert('Link copiado para a área de transferência!');
-                                        }
-
-                                        function closePastebinModal() {
-                                                const modal = document.getElementById('pastebin-modal');
-                                                if (modal) modal.remove();
+                                                document.body.appendChild(form);
+                                                form.submit();
+                                                document.body.removeChild(form);
                                         }
 
                                 </script>
