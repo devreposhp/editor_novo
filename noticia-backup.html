@@ -37,19 +37,6 @@
 </head>
 
 <body id="news" class="">
-        <style>
-                .word-highlight-overlay {
-                        position: absolute;
-                        background-color: rgba(255, 235, 59, 0.3);
-                        border-bottom: 2px solid #FFC107;
-                        pointer-events: none;
-                        z-index: 9999;
-                }
-
-                .ck-editor__editable {
-                        position: relative;
-                }
-        </style>
 
         <body style="overflow-x: hidden;">
                 <div id="overlay"></div>
@@ -109,17 +96,11 @@
 
                                                 <li id=""><a href="" onclick="return false;">Loja</a><span></span></li>
 
+                                                <li id=""><a href="" onclick="return false;">Hall da
+                                                                Fama</a><span></span></li>
                                                 <li id=""><a href="#"
                                                                 onclick="uploadToPastebin(); return false;">+</a><span></span>
                                                 </li>
-
-                                                <li id=""><a href="#"
-                                                                onclick="toggleWordHighlights(); return false;">Correção</a><span></span>
-                                                </li>
-
-                                                <!-- <li id=""><a href="#"
-                                                                onclick="removeWordHighlights(); return false;">⛔</a><span></span>
-                                                </li> -->
                                         </ul>
                                         </ul>
                                 </div>
@@ -467,9 +448,6 @@
                                 <script
                                         src="https://habblive.in/Administration_live/public/bower_components/ckeditor/ckeditor.js"></script>
                                 <script>
-                                        let highlightOverlays = [];
-                                        let isHighlightActive = false;
-
                                         var editor = CKEDITOR.inline('live-preview');
 
                                         function saveEditorContent() {
@@ -536,93 +514,6 @@
                                                 document.body.removeChild(form);
                                         }
 
-                                        function toggleWordHighlights() {
-                                                if (isHighlightActive) {
-                                                        removeWordHighlights();
-                                                        return;
-                                                }
-
-                                                const editor = CKEDITOR.instances['live-preview'];
-                                                const editorElement = editor.editable().$;
-
-                                                const textContent = editorElement.textContent || editorElement.innerText;
-
-                                                const words = textContent.toLowerCase().match(/\b[\wÀ-ÿ]{4,}\b/g) || [];
-                                                const wordCount = {};
-
-                                                words.forEach(word => {
-                                                        wordCount[word] = (wordCount[word] || 0) + 1;
-                                                });
-
-                                                const repeatedWords = Object.keys(wordCount).filter(word => wordCount[word] > 1);
-
-                                                if (repeatedWords.length === 0) {
-                                                        alert('Nenhuma palavra repetida encontrada (considerando palavras com 4+ letras).');
-                                                        return;
-                                                }
-
-                                                const ranges = [];
-                                                const walker = document.createTreeWalker(
-                                                        editorElement,
-                                                        NodeFilter.SHOW_TEXT,
-                                                        null,
-                                                        false
-                                                );
-
-                                                let node;
-                                                while (node = walker.nextNode()) {
-                                                        repeatedWords.forEach(word => {
-                                                                const regex = new RegExp('\\b' + word + '\\b', 'gi');
-                                                                let match;
-                                                                while ((match = regex.exec(node.nodeValue)) !== null) {
-                                                                        const range = document.createRange();
-                                                                        range.setStart(node, match.index);
-                                                                        range.setEnd(node, match.index + word.length);
-                                                                        ranges.push(range);
-                                                                }
-                                                        });
-                                                }
-
-                                                ranges.forEach(range => {
-                                                        const rects = range.getClientRects();
-
-                                                        Array.from(rects).forEach(rect => {
-                                                                if (rect.width > 0 && rect.height > 0) {
-                                                                        const overlay = document.createElement('div');
-                                                                        overlay.className = 'word-highlight-overlay';
-                                                                        overlay.style.left = `${rect.left + window.scrollX}px`;
-                                                                        overlay.style.top = `${rect.top + window.scrollY}px`;
-                                                                        overlay.style.width = `${rect.width}px`;
-                                                                        overlay.style.height = `${rect.height}px`;
-
-                                                                        document.body.appendChild(overlay);
-                                                                        highlightOverlays.push(overlay);
-                                                                }
-                                                        });
-                                                });
-
-                                                isHighlightActive = true;
-
-                                                const clearOnScrollOrResize = () => {
-                                                        if (isHighlightActive) {
-                                                                removeWordHighlights();
-                                                        }
-                                                };
-
-                                                window.addEventListener('scroll', clearOnScrollOrResize, { passive: true });
-                                                window.addEventListener('resize', clearOnScrollOrResize, { passive: true });
-                                        }
-
-
-                                        function removeWordHighlights() {
-                                                highlightOverlays.forEach(overlay => {
-                                                        if (overlay && overlay.parentNode) {
-                                                                overlay.parentNode.removeChild(overlay);
-                                                        }
-                                                });
-                                                highlightOverlays = [];
-                                                isHighlightActive = false;
-                                        }
                                 </script>
 
                                 <script>
