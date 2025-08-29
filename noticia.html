@@ -582,7 +582,8 @@
                                                 const editor = CKEDITOR.instances['live-preview'];
                                                 const editorElement = editor.editable().$;
 
-                                                const textContent = editorElement.textContent || editorElement.innerText;
+                                                // Primeiro, extrai o texto ignorando a div form_i
+                                                const textContent = extractTextExcludingForm(editorElement);
 
                                                 const words = textContent.toLowerCase().match(/\b[\wÀ-ÿ]{4,}\b/g) || [];
                                                 const wordCount = {};
@@ -666,6 +667,38 @@
 
                                                 window.addEventListener('scroll', clearOnScrollOrResize, { passive: true });
                                                 window.addEventListener('resize', clearOnScrollOrResize, { passive: true });
+                                        }
+
+                                        // Função auxiliar para extrair texto excluindo a div form_i
+                                        function extractTextExcludingForm(element) {
+                                                let text = '';
+                                                const walker = document.createTreeWalker(
+                                                        element,
+                                                        NodeFilter.SHOW_TEXT,
+                                                        null,
+                                                        false
+                                                );
+
+                                                let node;
+                                                while (node = walker.nextNode()) {
+                                                        // Verifica se o nó está dentro de um elemento com id="form_i"
+                                                        let parent = node.parentNode;
+                                                        let shouldInclude = true;
+
+                                                        while (parent && parent !== element) {
+                                                                if (parent.id === 'form_i') {
+                                                                        shouldInclude = false;
+                                                                        break;
+                                                                }
+                                                                parent = parent.parentNode;
+                                                        }
+
+                                                        if (shouldInclude) {
+                                                                text += node.nodeValue + ' ';
+                                                        }
+                                                }
+
+                                                return text;
                                         }
 
 
