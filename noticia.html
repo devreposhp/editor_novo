@@ -608,6 +608,24 @@
 
                                                 let node;
                                                 while (node = walker.nextNode()) {
+                                                        // Verifica se o nó está dentro de um elemento com id="form_i"
+                                                        let parent = node.parentNode;
+                                                        let shouldSkip = false;
+
+                                                        // Percorre a árvore de pais para verificar se está dentro da div a ser ignorada
+                                                        while (parent && parent !== editorElement) {
+                                                                if (parent.id === 'form_i') {
+                                                                        shouldSkip = true;
+                                                                        break;
+                                                                }
+                                                                parent = parent.parentNode;
+                                                        }
+
+                                                        // Se estiver dentro da div a ser ignorada, pula este nó
+                                                        if (shouldSkip) {
+                                                                continue;
+                                                        }
+
                                                         repeatedWords.forEach(word => {
                                                                 const regex = new RegExp('\\b' + word + '\\b', 'gi');
                                                                 let match;
