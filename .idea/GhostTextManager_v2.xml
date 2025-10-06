@@ -40,6 +40,31 @@
             </GhostTextMetaData>
           </value>
         </entry>
+        <entry key="perfeito, agora em baixo do lado do botão de gerar comandos, crie um botão de consultar api no qual ele irá fazer uma tabela abaixo no qual irá conseultar na api&#10;&#10;https://habblive.in/api/userinfo.php?user=WiredD&amp;timestamp=333&#10;&#10;onde WiredD vai ser o nick e timestamp=333 irá gerar o timestamp atual no lugar do 333 &#10;&#10;a api retorna algo do tipo&#10;&#10;{&#10;  &quot;username&quot;: &quot;WiredD&quot;,&#10;  &quot;figure&quot;: &quot;hr-3163-61.hd-180-10.lg-280-110.sh-3089-110.ch-255-110.cp-9032-62&quot;,&#10;  &quot;motto&quot;: &quot;ðŸ”¥&quot;,&#10;  &quot;account_created&quot;: &quot;08-07-2017&quot;,&#10;  &quot;last_login&quot;: &quot;06-10-2025 14:56:52&quot;,&#10;  &quot;achievements&quot;: 20357,&#10;  &quot;online&quot;: 1,&#10;  &quot;vip&quot;: 1,&#10;  &quot;credits&quot;: 612,&#10;  &quot;currencies&quot;: [&#10;    {&#10;      &quot;user_id&quot;: 2059032,&#10;      &quot;amount&quot;: 234533,&#10;      &quot;type&quot;: 0&#10;    },&#10;    {&#10;      &quot;user_id&quot;: 2059032,&#10;      &quot;amount&quot;: 902443,&#10;      &quot;type&quot;: 5&#10;    },&#10;    {&#10;      &quot;user_id&quot;: 2059032,&#10;      &quot;amount&quot;: 0,&#10;      &quot;type&quot;: 101&#10;    },&#10;    {&#10;      &quot;user_id&quot;: 2059032,&#10;      &quot;amount&quot;: 5,&#10;      &quot;type&quot;: 102&#10;    },&#10;    {&#10;      &quot;user_id&quot;: 2059032,&#10;      &quot;amount&quot;: 1771,&#10;      &quot;type&quot;: 104&#10;    }&#10;  ]&#10;}&#10;&#10;&#10;e na tabela terá o nick e o amount da  currencies que tem o &quot;type&quot; 102 com o texto em vermelho&#10;&#10;e caso a pessoa clique novamente em consultar api e mude o valor lá da currencie, exemplo era 5 e agora é 6, ele irá mudar a cor para verde&#10;&#10;&#10;para saber qual pessoa recebeu o comando baseado na api">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1759767190570" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="recebi o erro 429 Too Many Requests e Erro ao consultar: Failed to fetch na tabela ao consultar pelo site, mas digitando a url normal vai">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="2.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1759767408883" />
+                  <option value="1759767370223" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
