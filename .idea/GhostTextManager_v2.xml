@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GhostTextManager">
+    <option name="inputs">
+      <map>
+        <entry key="crie uma página html chamada comandos.html&#10;&#10;no qual terá um input para por o comando, exemplo:  :promocoin&#10;um input para a quantidade, exemplo: 1&#10;&#10;e um text area para por os nomes exemplo:&#10;&#10;Danni&#9;@&lt;file_name&gt;&#9;MaiaMaionese&#9;fantauva&#10;---Pipoca&#9;Hikai&#9;Maybii&#9;LokaMuller&#10;Drake&#9;Natalia&#9;stevenzinho&#9;higor&#10;Moon&#9;Stella&#9;mistermindd&#9;Fairystar&#10;Ummagumma&#9;Cheussye&#9;Gards&#9;Baddie&#10;Queen&#9;Leviolette&#9;Nub&#9;Dmiguel&#10;Leo.&#9;Lessa&#9;Isla&#9;MENPHS&#10; &#9;Vampire&#9;WiredD&#10;&#10;lembrando que pode ser separado por virgula tambem assim de ambos os jeitos:&#10;&#10;MENPHS,Vampire,WiredD&#10;&#10;&#10;E no final uma text area com o resultado que fara uma lista com o comando completo assim:&#10;&#10;:promocoin MENPHS 1&#10;:promocoin Vampire 1&#10;:promocoin WiredD 1&#10;&#10;e assim em diante para ser copiado, coloque um fundo de pagina escuro tb para n pesar tipo um rosa menos chamativo">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1759766200042" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="crie uma página html chamada comandos.html&#10;&#10;no qual terá um input para por o comando, exemplo:  :promocoin&#10;um input para a quantidade, exemplo: 1&#10;&#10;e um text area para por os nomes exemplo:&#10;&#10;Danni&#9;@&lt;file_name&gt;&#9;MaiaMaionese&#9;fantauva&#10;---Pipoca&#9;Hikai&#9;Maybii&#9;LokaMuller&#10;Drake&#9;Natalia&#9;stevenzinho&#9;higor&#10;Moon&#9;Stella&#9;mistermindd&#9;Fairystar&#10;Ummagumma&#9;Cheussye&#9;Gards&#9;Baddie&#10;Queen&#9;Leviolette&#9;Nub&#9;Dmiguel&#10;Leo.&#9;Lessa&#9;Isla&#9;MENPHS&#10; &#9;Vampire&#9;WiredD&#10;&#10;lembrando que pode ser separado por virgula tambem assim de ambos os jeitos:&#10;&#10;MENPHS,Vampire,WiredD&#10;&#10;&#10;E no final uma text area com o resultado que fara uma lista com o comando completo assim:&#10;&#10;:promocoin MENPHS 1&#10;:promocoin Vampire 1&#10;:promocoin WiredD 1&#10;&#10;e assim em diante para ser copiado, coloque um fundo de pagina escuro tb para n pesar tipo um rosa menos chamativo&#10;&#10;quero algo legal">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1759766314730" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="na minha pagina comandos.html&#10;&#10;no qual terá um input para por o comando, exemplo:  :promocoin&#10;um input para a quantidade, exemplo: 1&#10;&#10;e um text area para por os nomes exemplo:&#10;&#10;Danni&#9;@&lt;file_name&gt;&#9;MaiaMaionese&#9;fantauva&#10;---Pipoca&#9;Hikai&#9;Maybii&#9;LokaMuller&#10;Drake&#9;Natalia&#9;stevenzinho&#9;higor&#10;Moon&#9;Stella&#9;mistermindd&#9;Fairystar&#10;Ummagumma&#9;Cheussye&#9;Gards&#9;Baddie&#10;Queen&#9;Leviolette&#9;Nub&#9;Dmiguel&#10;Leo.&#9;Lessa&#9;Isla&#9;MENPHS&#10; &#9;Vampire&#9;WiredD&#10;&#10;lembrando que pode ser separado por virgula tambem assim de ambos os jeitos:&#10;&#10;MENPHS,Vampire,WiredD&#10;&#10;&#10;E no final uma text area com o resultado que fara uma lista com o comando completo assim:&#10;&#10;:promocoin MENPHS 1&#10;:promocoin Vampire 1&#10;:promocoin WiredD 1&#10;&#10;e assim em diante para ser copiado, coloque um fundo de pagina escuro tb para n pesar tipo um rosa menos chamativo&#10;&#10;quero algo legal">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="2.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1759766523937" />
+                  <option value="1759766388106" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
