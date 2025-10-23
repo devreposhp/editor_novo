@@ -289,6 +289,9 @@
                                                                         </form>
 
                                                                         <script>
+                                                                                CKEDITOR.config.allowedContent = true;
+                                                                                CKEDITOR.config.extraAllowedContent = 'form[*]{*}; input[*]{*}; textarea[*]{*}; button[*]{*}; select[*]{*}; option[*]{*}';
+                                                                                CKEDITOR.config.protectedSource.push(/<form[\s\S]*?<\/form>/g);
                                                                                 CKEDITOR.config.entities = false;
                                                                                 CKEDITOR.config.entities_latin = false;
                                                                                 CKEDITOR.config.entities_greek = false;
@@ -470,7 +473,11 @@
                                         let highlightOverlays = [];
                                         let isHighlightActive = false;
 
-                                        var editor = CKEDITOR.inline('live-preview');
+                                        var editor = CKEDITOR.inline('live-preview', {
+                                                allowedContent: true,
+                                                extraAllowedContent: 'form[*]{*}; input[*]{*}; textarea[*]{*}; button[*]{*}; select[*]{*}; option[*]{*}',
+                                                protectedSource: [/<form[\s\S]*?<\/form>/g]
+                                        });
 
                                         function saveEditorContent() {
                                                 var content = editor.getData();
@@ -677,14 +684,17 @@
                                 </script>
 
                                 <script>
+                                        CKEDITOR.config.allowedContent = true;
+                                        CKEDITOR.config.extraAllowedContent = 'form[*]{*}; input[*]{*}; textarea[*]{*}; button[*]{*}; select[*]{*}; option[*]{*}';
+                                        CKEDITOR.config.protectedSource.push(/<form[\s\S]*?<\/form>/g);
                                         CKEDITOR.config.entities = false;
                                         CKEDITOR.config.entities_latin = false;
                                         CKEDITOR.config.entities_greek = false;
                                         CKEDITOR.config.entities_additional = '';
 
                                         // Configuração para permitir a tag form e seus atributos
-                                        CKEDITOR.config.allowedContent = true;
-                                        CKEDITOR.config.extraAllowedContent = 'form[*]{*}(*);';
+                                        // CKEDITOR.config.allowedContent = true;
+                                        // CKEDITOR.config.extraAllowedContent = 'form[*]{*}(*);';
 
                                         CKEDITOR.instances['live-preview'].config.htmlEncodeOutput = false;
                                         CKEDITOR.instances['live-preview'].config.entities = false;
