@@ -4,7 +4,7 @@
 <head>
         <meta http-equiv="Content-Language" content="pt-br">
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>Editor - Vampire</title>
+        <title>Editor - Blood</title>
         <script type="text/javascript">var andSoItBegins = (new Date()).getTime();</script>
         <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=+Uq+o1IWx810L7" style="display:none"
                         height="1" width="1" alt="" /></noscript>
@@ -100,7 +100,7 @@
 
                                         <ul id="navi">
                                                 <li class=""><a href="" onclick="return false;">
-                                                                Vampire ( <img
+                                                                Blood ( <img
                                                                         src="https://habblive.in/web-gallery/v2/images/icon_habbo_small.png">
                                                                 )
                                                         </a><span></span></li>
@@ -184,32 +184,32 @@
                                                                         </li>
 
                                                                         <li><a href="#" onclick="return false;">
-                                                                                        <font color="blue">Choroes do
-                                                                                                habblive &raquo;
+                                                                                        <font color="blue">Apenas uma
+                                                                                                noticia
                                                                                 </a></font>
                                                                                 </a></li>
 
                                                                         <li><a href="#" onclick="return false;">
-                                                                                        <font color="blue">Chora menos
-                                                                                                #405 &raquo;
+                                                                                        <font color="blue">Apenas uma
+                                                                                                noticia
                                                                                 </a></font>
                                                                                 </a></li>
 
                                                                         <li><a href="#" onclick="return false;">
-                                                                                        <font color="blue">RE:
-                                                                                                Choradeira #219 &raquo;
+                                                                                        <font color="blue">Apenas uma
+                                                                                                noticia
                                                                                 </a></font>
                                                                                 </a></li>
 
                                                                         <li><a href="#" onclick="return false;">
-                                                                                        <font color="blue">RE: Morre
-                                                                                                chorao &raquo;
+                                                                                        <font color="blue">Apenas uma
+                                                                                                noticia
                                                                                 </a></font>
                                                                                 </a></li>
 
                                                                         <li><a href="#" onclick="return false;">
-                                                                                        <font color="blue">Parabéns,
-                                                                                                Wake! &raquo;
+                                                                                        <font color="blue">Apenas uma
+                                                                                                noticia
                                                                                 </a></font>
                                                                                 </a></li>
 
@@ -303,10 +303,10 @@
                                                                                 <div
                                                                                         style="width:125px; height:60px; float:right; margin-right:4px; margin-top:6px;">
                                                                                         <div
-                                                                                                style="width:56px;height:56px;float:left;border-radius:2px;border:1px solid #666;cursor:pointer;background:url(//i.imgur.com/a5ZswXh.png) center no-repeat">
+                                                                                                style="width:56px;height:56px;float:left;border-radius:2px;border:1px solid #666;cursor:pointer;background:url(https://i.imgur.com/a5ZswXh.png) center no-repeat">
                                                                                         </div></a>
                                                                                         <div
-                                                                                                style="width:56px;height:56px;float:left;border-radius:2px;border:1px solid #666;margin-left:5px;cursor:pointer;background:url(//i.imgur.com/VAO3Csz.png) center no-repeat">
+                                                                                                style="width:56px;height:56px;float:left;border-radius:2px;border:1px solid #666;margin-left:5px;cursor:pointer;background:url(https://i.imgur.com/VAO3Csz.png) center no-repeat">
                                                                                         </div></a>
 
 
@@ -369,7 +369,7 @@
                                                                                         <div
                                                                                                 style="width:40px;height:60px;background:url(//i.imgur.com/6eIXCaW.png);margin-top:6px;margin-left:6px;float:left">
                                                                                                 <div
-                                                                                                        style="background:url(https://habblive.in/imageeer.php?user=Wake) -12px -20px;width:40px;height:60px">
+                                                                                                        style="background:url(http://habblive.in/imager_radio.php?user=Blood) -12px -20px;width:40px;height:60px">
                                                                                                 </div>
                                                                                         </div>
                                                                                         <div
@@ -384,7 +384,7 @@
                                                                                                                         onclick="return false;">
                                                                                                                         <font
                                                                                                                                 color="blue">
-                                                                                                                                Wake
+                                                                                                                                Blood
                                                                                                                         </font>
                                                                                                                 </a></b><br>
                                                                                                 </div>
@@ -401,11 +401,11 @@
                                                                                         <div
                                                                                                 style="width:129px; height:10px; margin-top:5px; float:left; margin-left:10px; font-size:10px; color:#666666;">
                                                                                                 <br>
-                                                                                                <b><span style="color: #008000; font-size:10px;">746<span
+                                                                                                <b><span style="color: #008000; font-size:10px;">666<span
                                                                                                                         style="color: #000000;"></b>
                                                                                                 Curtiram.<br>
                                                                                                 <b><span
-                                                                                                                style="color: #ff0000; font-size:10px;">522</b>
+                                                                                                                style="color: #ff0000; font-size:10px;">666</b>
                                                                                                 Não curtiram.<br>
                                                                                                 <b>E você, já votou?</b>
                                                                                                 <div
@@ -682,6 +682,12 @@
                                         CKEDITOR.config.entities_greek = false;
                                         CKEDITOR.config.entities_additional = '';
 
+                                        // Configuração para permitir a tag form e seus atributos
+                                        CKEDITOR.config.allowedContent = true;
+                                        CKEDITOR.config.extraAllowedContent = 'form[*]{*}(*);';
+
                                         CKEDITOR.instances['live-preview'].config.htmlEncodeOutput = false;
                                         CKEDITOR.instances['live-preview'].config.entities = false;
+                                        CKEDITOR.instances['live-preview'].config.allowedContent = true;
+                                        CKEDITOR.instances['live-preview'].config.extraAllowedContent = 'form[*]{*}(*);';
                                 </script>
